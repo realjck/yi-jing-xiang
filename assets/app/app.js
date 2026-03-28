@@ -180,7 +180,7 @@ $("#book-image").on("click", ()=>{
 	PlaySound("click");
 	const hexatext = HEXAGRAMS_TEXTS[lang][hexagram1];
 	const num = hexatext.substring(0, hexatext.indexOf("."));
-	const url = "http://wengu.tartarie.com/wg/wengu.php?l=Yijing&tire="+yiking+"&no="+num+"&lang="+lang;
+	const url = "http://139.162.86.18/wg/wengu.php?l=Yijing&tire="+yiking+"&no="+num+"&lang="+lang;
 	window.open(url, '_blank').focus();
 });
 
