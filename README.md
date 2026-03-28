@@ -4,7 +4,7 @@ Web application written in static JS which allows to make Yi Jing casts, then di
 
 ![JS ES6 jQuery](https://img.shields.io/badge/-JS%20ES6%20jQuery-0?logo=pwa&labelColor=580fc3&color=efd81d)
 
-Each cast refers to a direct-link to [wengu.tartarie Yi Jing web book](http://wengu.tartarie.com/wg/wengu.php?l=Yijing&no=0).
+Each cast refers to a direct-link to [wengu.tartarie Yi Jing web book](http://wengu.tartarie.com/wg/wengu.php%3Fl=Yijing&no=0.html).
 
 ## About:
 
@@ -14,7 +14,7 @@ Each cast refers to a direct-link to [wengu.tartarie Yi Jing web book](http://we
 >
 > Many thanks to Sandrine for the illustrations.
 
-## ☯️ [**[This link to the app]** (hosted in this repository )](https://realjck.github.io/yi-jing-xiang/)
+## 👉 [Launch the app](https://realjck.github.io/yi-jing-xiang/)
 
 ### Build as progressive web application:
 
