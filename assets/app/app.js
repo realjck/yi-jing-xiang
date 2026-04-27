@@ -61,24 +61,24 @@ let hexagram1, hexagram2;
  * h3Index counts h3 headings sequentially (1 = first h3 = bottom trait).
  */
 function parseSections(mdText) {
-    const lines = mdText.split('\n');
-    const sections = [];
-    let current = null;
-    let h3Count = 0;
+	const lines = mdText.split('\n');
+	const sections = [];
+	let current = null;
+	let h3Count = 0;
 
-    for (const line of lines) {
-        const match = line.match(/^(#{1,3}) /);
-        if (match) {
-            if (current) sections.push(current);
-            const level = match[1].length;
-            const h3Index = level === 3 ? ++h3Count : null;
-            current = { level, h3Index, markdown: line + '\n' };
-        } else if (current) {
-            current.markdown += line + '\n';
-        }
-    }
-    if (current) sections.push(current);
-    return sections;
+	for (const line of lines) {
+		const match = line.match(/^(#{1,3}) /);
+		if (match) {
+			if (current) sections.push(current);
+			const level = match[1].length;
+			const h3Index = level === 3 ? ++h3Count : null;
+			current = { level, h3Index, markdown: line + '\n' };
+		} else if (current) {
+			current.markdown += line + '\n';
+		}
+	}
+	if (current) sections.push(current);
+	return sections;
 }
 
 /**
@@ -86,46 +86,47 @@ function parseSections(mdText) {
  * Includes h1/h2 of hex1, mutated h3s, then h1/h2 of hex2 if mutation.
  */
 async function buildOracleHTML() {
-    const hasMutation = yiking.split('').some(c => c === '6' || c === '9');
-    const allMutant = yiking.split('').every(c => c === '6' || c === '9');
+	const hasMutation = yiking.split('').some(c => c === '6' || c === '9');
+	const allMutant = yiking.split('').every(c => c === '6' || c === '9');
 
-    async function fetchSections(hexBinary) {
-        const text = HEXAGRAMS_TEXTS[lang][hexBinary];
-        const num = String(parseInt(text)).padStart(2, '0');
-        const res = await fetch('assets/data/book/' + lang + '/' + num + '.md');
-        const md = await res.text();
-        return parseSections(md);
-    }
+	async function fetchSections(hexBinary) {
+		const text = HEXAGRAMS_TEXTS[lang][hexBinary];
+		const num = text.split('.')[0].trim().padStart(2, '0');
+		const res = await fetch('assets/data/book/' + lang + '/' + num + '.md');
+		if (!res.ok) throw new Error(`Failed to fetch ${res.url}: ${res.status}`);
+		const md = await res.text();
+		return parseSections(md);
+	}
 
-    let html = '';
+	let html = '';
 
-    const sections1 = await fetchSections(hexagram1);
+	const sections1 = await fetchSections(hexagram1);
 
-    // h1 and h2 from hexagram 1
-    for (const s of sections1.filter(s => s.level === 1 || s.level === 2)) {
-        html += marked.parse(s.markdown);
-    }
+	// h1 and h2 from hexagram 1
+	for (const s of sections1.filter(s => s.level === 1 || s.level === 2)) {
+		html += marked.parse(s.markdown);
+	}
 
-    if (hasMutation) {
-        // h3s at mutated positions (h3Index 1–6), plus h3Index 7 if all mutant
-        for (const s of sections1.filter(s => s.level === 3)) {
-            if (s.h3Index <= 6) {
-                if (yiking[s.h3Index - 1] === '6' || yiking[s.h3Index - 1] === '9') {
-                    html += marked.parse(s.markdown);
-                }
-            } else if (s.h3Index === 7 && allMutant) {
-                html += marked.parse(s.markdown);
-            }
-        }
+	if (hasMutation) {
+		// h3s at mutated positions (h3Index 1–6), plus h3Index 7 if all mutant
+		for (const s of sections1.filter(s => s.level === 3)) {
+			if (s.h3Index <= 6) {
+				if (yiking[s.h3Index - 1] === '6' || yiking[s.h3Index - 1] === '9') {
+					html += marked.parse(s.markdown);
+				}
+			} else if (s.h3Index === 7 && allMutant) {
+				html += marked.parse(s.markdown);
+			}
+		}
 
-        // h1 and h2 from hexagram 2
-        const sections2 = await fetchSections(hexagram2);
-        for (const s of sections2.filter(s => s.level === 1 || s.level === 2)) {
-            html += marked.parse(s.markdown);
-        }
-    }
+		// h1 and h2 from hexagram 2
+		const sections2 = await fetchSections(hexagram2);
+		for (const s of sections2.filter(s => s.level === 1 || s.level === 2)) {
+			html += marked.parse(s.markdown);
+		}
+	}
 
-    return html;
+	return html;
 }
 
 /**
