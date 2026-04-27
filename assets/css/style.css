@@ -417,6 +417,10 @@ body.hasHover .coin:hover {
 	margin-bottom: 0.2em;
 }
 
+#oracle-content p {
+  line-height: normal;
+}
+
 #oracle-content blockquote {
 	border-left: 2px solid #c6c2be;
 	margin: 0.5em 0;
@@ -432,6 +436,8 @@ body.hasHover .coin:hover {
 
 #oracle-content li {
   font-weight: 500;
+  line-height: normal;
+  margin-bottom: 0.5em;
 }
 
 #oracle-content hr {
