@@ -49,7 +49,7 @@ Chaque écran est `position: absolute; inset: 0` dans `#app`. Transitions via cl
 ### Layout
 
 - `#app` : `width: 100%; height: 100dvh` — plein écran sur mobile et desktop
-- Contenu centré : `max-width: 480px; margin: auto` pour desktop — pas de phone shell
+- Contenu centré : `max-width: 720px; margin: auto` pour desktop — pas de phone shell
 - Mobile first, responsive
 
 ### CSS Variables
