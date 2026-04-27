@@ -74,6 +74,7 @@ h1 {
 	margin: 1.5em 0 1.0em 0;
 	height: 5em;
 	font-size: 1.2em;
+  font-family: system-ui, -apple-system, Arial, sans-serif;
 }
 
 .swiper-button-next, .swiper-button-prev {
@@ -111,8 +112,8 @@ h1 {
 }
 
 .button {
-	width: 3em;
-	height: 3em;
+	width: 3.5em;
+	height: 3.5em;
 	cursor: pointer;
 }
 
@@ -154,32 +155,34 @@ h1 {
 #info {
 	display: none;
 	position: absolute;
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 0.9);
 	color: white;
-	height: 90vh;
 	z-index: 99;
+	height: 80vh;
 	padding-left: 20%;
 	padding-right: 20%;
 	padding-top: 10vh;
-	font-family: Georgia, 'Times New Roman', Times, serif;
+	padding-bottom: 10vh;
+	font-family: system-ui, -apple-system, Arial, sans-serif;
 	line-height: 1.6em;
-	letter-spacing: 0.1em;
+	letter-spacing: 0.01em;
 	overflow-y: auto;
 }
 
 #info a {
+  font-weight: 500;
   color: sandybrown;
   text-decoration: none;
 }
 
 #info a:hover {
-  text-decoration: underline;
+  border-bottom: 2px solid sandybrown;
 }
 
 .consigne {
-	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-family: system-ui, -apple-system, Arial, sans-serif;
 	line-height: 1.2em;
-	letter-spacing: 0.1em;
+	letter-spacing: 0.01em;
 	font-size: 1.2em;
 	margin-bottom: 1.5em;
 }
@@ -309,19 +312,10 @@ body.hasHover .coin:hover {
 		font-size: 2.8em;
 	}
 
-	#baseline {
-		font-size: 2em;
-	}
-
 	.hexagram-text {
 		font-size: 2.2em;
 		margin-bottom: -1em;
 		width: 80vw;
-	}
-
-	#bt-back {
-		width: 2.5em;
-		height: 2.5em;
 	}
 
 	.bloc {
@@ -344,11 +338,6 @@ body.hasHover .coin:hover {
 	#info > p {
 		font-size: 1.2em;
 		line-height: 1.4;
-	}
-
-	.button {
-		width: 2em;
-		height: 2em;
 	}
 
 	.swiper-button-next, .swiper-button-prev {
@@ -382,14 +371,17 @@ body.hasHover .coin:hover {
 	scrollbar-color: #c6c2be transparent;
 }
 
+#info::-webkit-scrollbar,
 #oracle-content::-webkit-scrollbar {
 	width: 5px;
 }
 
+#info::-webkit-scrollbar,
 #oracle-content::-webkit-scrollbar-track {
 	background: transparent;
 }
 
+#info::-webkit-scrollbar,
 #oracle-content::-webkit-scrollbar-thumb {
 	background-color: #c6c2be;
 	border-radius: 3px;
