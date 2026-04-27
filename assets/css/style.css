@@ -394,6 +394,7 @@ body.hasHover .coin:hover {
 	font-size: 1.3em;
 	margin-top: 1.8em;
 	margin-bottom: 0.2em;
+  line-height: normal;
 }
 
 #oracle-content h2 {
