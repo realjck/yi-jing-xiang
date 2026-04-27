@@ -2,93 +2,149 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="theme-color" content="#c6c2be">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c0a08">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Yi Jing Xiang</title>
   <meta name="description" content="Book of Changes companion app">
   <link rel="shortcut icon" sizes="192x192" href="./assets/images/favicon.png">
   <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
-  <link href="./assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" />
-  <link href="./assets/css/style.css" rel="stylesheet" />
+  <link href="./assets/css/style.css" rel="stylesheet">
   <link rel="manifest" href="./manifest.json">
 </head>
 <body>
-<div id="navbar-bottom">
-	<div class="button" id="bt-back" style="display:none"></div>
-</div>
-<div id="navbar-right">
-	<div class="button active" id="bt-lang-en"></div>
-	<div class="button" id="bt-lang-fr"></div>
-	<div class="button active" id="bt-sound"></div>
-	<div class="button" id="bt-info"></div>
-</div>
-<div id="info">
-	<p>The Book of Changes – I Ching in Chinese – is unquestionably one of the most important books in the world's literature. Nearly all that is greatest and most significant in the three thousand years of Chinese cultural history has either taken its inspiration from this book, or has exerted an influence on the interpretation of its text. Both of the two branches of Chinese philosophy, Confucianism and Taoism, have their common roots here.</p><p>This application includes the complete oracle text for each hexagram, readable directly in the app.</p><p>Many thanks to Sandrine for the illustrations.</p>
-</div>
-<div class="swiper">
-	<div class="swiper-wrapper">
-		<div class="swiper-slide">
-			<h1>易经<br>Yi Jing</h1>
-			<div id="logo"></div>
-			<div id="baseline"></div>
-		</div>
-		<div class="swiper-slide">
-			<div id="consigne-1" class="consigne"></div>
-			<div id="coins">
-				<div>
-					<div class="coin" id="coin-yin-mut"></div>
-					<p>YIN MUT.</p>
-				</div>
-				<div>
-					<div class="coin" id="coin-yang"></div>
-					<p>YANG</p>
-				</div>
-				<div>
-					<div class="coin" id="coin-yin"></div>
-					<p>YIN</p>
-				</div>
-				<div>
-					<div class="coin" id="coin-yang-mut"></div>
-					<p>YANG MUT.</p>
-				</div>
-			</div>
-			<div id="consigne-2" class="consigne"></div>
-		</div>
-		<div id="result1" class="swiper-slide" style="display:none">
-			<div class="hexagram-text"></div>
-			<div class="bloc">
-				<div class="img-top"></div>
-				<div class="img-bottom"></div>
-				<div class="bloc-bar"></div>
-			</div>
-		</div>
-		<div id="result2" class="swiper-slide" style="display:none">
-			<p>MUTATION</p>
-			<div class="hexagram-text"></div>
-			<div class="bloc">
-				<div class="img-top"></div>
-				<div class="img-bottom"></div>
-				<div class="bloc-bar"></div>
-			</div>
-		</div>
-		<div id="end" class="swiper-slide" style="display:none">
-			<div id="oracle-content"></div>
-		</div>
-	</div>
-	<div class="swiper-button-next"></div>
-	<div class="swiper-button-prev"></div>
-</div>
-<script src="./assets/libs/swiper/swiper-bundle.min.js"></script>
-<script src="./assets/libs/jquery/jquery-1.12.4.min.js"></script>
+
+<div id="app">
+
+  <!-- ── Shared header ── -->
+  <header class="hdr">
+    <div class="hdr-left">
+      <button class="hdr-home hidden" id="bt-home" aria-label="Home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H15v-5h-6v5H4a1 1 0 01-1-1V10.5z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="hdr-right">
+      <button class="hdr-btn lang-btn" id="bt-lang-en">EN</button>
+      <button class="hdr-btn lang-btn" id="bt-lang-fr">FR</button>
+      <button class="hdr-btn" id="bt-sound" aria-label="Sound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+          <path d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"/>
+        </svg>
+      </button>
+      <button class="hdr-btn" id="bt-info" aria-label="Info">i</button>
+      <button class="hdr-btn" id="bt-theme" aria-label="Theme">&#9790;</button>
+    </div>
+  </header>
+
+  <!-- ── Screens ── -->
+  <div id="screens">
+
+    <!-- SCREEN 0 — HOME -->
+    <div class="screen active" id="s-home">
+      <div class="home-body">
+        <div class="home-chinese">易经</div>
+        <div class="home-latin">Yi Jing</div>
+        <img class="home-logo" src="./assets/images/yijingxiang-logo.png" alt="Yi Jing Xiang logo">
+        <div class="home-sub" id="baseline"></div>
+        <button class="btn-start" id="bt-start"></button>
+      </div>
+    </div>
+
+    <!-- SCREEN 1 — INSTRUCTIONS -->
+    <div class="screen" id="s-inst">
+      <div class="inst-body">
+        <div class="inst-title">&#26131;&#32463;</div>
+        <div class="sep"></div>
+        <div class="inst-text" id="consigne-1"></div>
+        <div>
+          <div class="inst-coins-label" id="inst-coins-label"></div>
+          <div class="inst-coins" id="inst-coins"></div>
+        </div>
+        <div class="inst-note" id="inst-note"></div>
+      </div>
+      <div class="bottom-nav">
+        <button class="btn-action" id="bt-inst-back"></button>
+        <button class="btn-action primary" id="bt-inst-start"></button>
+      </div>
+    </div>
+
+    <!-- SCREEN 2 — CASTING -->
+    <div class="screen" id="s-cast">
+      <div class="cast-progress">
+        <div class="cast-progress-label" id="cast-label"></div>
+        <div class="cast-dots" id="cast-dots"></div>
+      </div>
+      <div class="hex-area" id="hex-area"></div>
+      <div class="coin-btns" id="coin-btns"></div>
+      <div class="cast-bottom">
+        <button class="btn-reset" id="bt-reset"></button>
+      </div>
+    </div>
+
+    <!-- SCREEN 3 — RESULT -->
+    <div class="screen" id="s-result">
+      <div class="result-title-area">
+        <div class="result-num" id="result-num"></div>
+        <div class="result-zh" id="result-zh"></div>
+      </div>
+      <div class="result-card-wrap">
+        <div class="result-card" id="result-card">
+          <div class="result-card-upper">
+            <img id="rc-upper-img" src="" alt="">
+          </div>
+          <div class="result-card-divider"></div>
+          <div class="result-card-lower">
+            <img id="rc-lower-img" src="" alt="">
+          </div>
+          <div class="card-hex-overlay" id="card-overlay"></div>
+          <div class="card-label" id="card-label"></div>
+        </div>
+      </div>
+      <div class="result-nav">
+        <button class="nav-arr disabled" id="arr-prev">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="btn-reset" id="bt-new-cast-result"></button>
+        <button class="nav-arr" id="arr-next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- SCREEN 4 — ORACLE -->
+    <div class="screen" id="s-oracle">
+      <div id="oracle-content"></div>
+      <div class="bottom-nav">
+        <button class="btn-action" id="bt-oracle-back"></button>
+        <button class="btn-action primary" id="bt-new-cast-oracle"></button>
+      </div>
+    </div>
+
+  </div><!-- /#screens -->
+
+  <!-- ── Modal info ── -->
+  <div class="modal-overlay" id="modal-info">
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <div class="modal-title" id="modal-title"></div>
+      <div class="sep"></div>
+      <div class="modal-body" id="modal-body"></div>
+      <button class="modal-close" id="bt-modal-close"></button>
+    </div>
+  </div>
+
+</div><!-- /#app -->
+
 <script src="./assets/libs/marked/marked.min.js"></script>
 <script src="./assets/data/ui-texts.js"></script>
 <script src="./assets/data/hexagrams-texts.js"></script>
 <script src="./assets/app/app.js"></script>
 <script>
-    if ('serviceWorker' in navigator) {
-        self.registration.unregister();
-        navigator.serviceWorker.register('./sw.js?'+Date.now());
-    }
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js?' + Date.now());
+  }
 </script>
 </body>
 </html>
