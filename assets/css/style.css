@@ -39,25 +39,23 @@ body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-
 	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+	/* -webkit-user-select: none; */
+	/* -moz-user-select: none; */
+	/* -ms-user-select: none; */
+	/* user-select: none; */
 	scroll-behavior: smooth;
-
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-
+  font-family: system-ui, -apple-system, Arial, sans-serif;
 	background-image: url('../images/background.jpg');
 	background-size: contain;
-	font-family: Hidetoshy, serif;
 	font-weight: normal;
 }
 
 h1 {
 	font-weight: normal;
 	font-size: 2.2em;
+  font-family: Hidetoshy, serif;
 }
 
 #logo {
@@ -74,7 +72,6 @@ h1 {
 	margin: 1.5em 0 1.0em 0;
 	height: 5em;
 	font-size: 1.2em;
-  font-family: system-ui, -apple-system, Arial, sans-serif;
 }
 
 .swiper-button-next, .swiper-button-prev {
@@ -163,7 +160,6 @@ h1 {
 	padding-right: 20%;
 	padding-top: 10vh;
 	padding-bottom: 10vh;
-	font-family: system-ui, -apple-system, Arial, sans-serif;
 	line-height: 1.6em;
 	letter-spacing: 0.01em;
 	overflow-y: auto;
@@ -180,7 +176,6 @@ h1 {
 }
 
 .consigne {
-	font-family: system-ui, -apple-system, Arial, sans-serif;
 	line-height: 1.2em;
 	letter-spacing: 0.01em;
 	font-size: 1.2em;
@@ -192,6 +187,10 @@ h1 {
 	height: 3em;
 	margin: 0.5em;
 	display: flex;
+}
+
+#coins {
+  margin-bottom: 2em;
 }
 
 .coin {
@@ -222,6 +221,7 @@ body.hasHover .coin:hover {
 	margin-top: 0em;
 	font-size: 0.8em;
 	white-space: nowrap;
+  font-weight: 600;
 }
 
 #coins > div {
@@ -250,12 +250,14 @@ body.hasHover .coin:hover {
 }
 
 .hexagram-text {
+  font-family: Hidetoshy, serif;
 	font-size: 1.8em;
 	line-height: 1.1em;
 	margin-bottom: -0.4em;
 }
 
 #result2 > p {
+  font-weight: 600;
 	color: #b96361;
 	margin-bottom: 0;
 	margin-top: -1em;
@@ -361,7 +363,6 @@ body.hasHover .coin:hover {
 	box-sizing: border-box;
 	padding: 5em 20vw 10em 20vw;
 	text-align: left;
-	font-family: system-ui, -apple-system, Arial, sans-serif;
 	font-size: 0.95em;
 	line-height: 1.7;
 	letter-spacing: 0.01em;
