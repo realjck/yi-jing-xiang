@@ -151,6 +151,9 @@ function SwitchLang(_lang){
 
 	if(hexagram1 != null){
 		UpdateHexagramsTexts();
+		buildOracleHTML().then(html => {
+			$("#oracle-content").html(html);
+		});
 	}
 }
 
@@ -183,6 +186,7 @@ btBack.on("click", () =>{
 		swiper.update();
 	}, 500);
 	
+	$("#oracle-content").html("");
 	PlaySound("back");
 });
 
@@ -223,7 +227,11 @@ function AddBar(bar){
 		$("#result2 .img-top").css("background-image", "url('assets/images/"+hexagram2.substring(3)+".jpg'");
 		
 		UpdateHexagramsTexts();
-		
+
+		buildOracleHTML().then(html => {
+			$("#oracle-content").html(html);
+		});
+
 		$("#result1").show();
 		if (hexagram1 !== hexagram2){
 			$("#result2").show();
