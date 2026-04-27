@@ -153,6 +153,8 @@ function SwitchLang(_lang){
 		UpdateHexagramsTexts();
 		buildOracleHTML().then(html => {
 			$("#oracle-content").html(html);
+		}).catch(err => {
+			console.error("Oracle content load failed:", err);
 		});
 	}
 }
@@ -230,6 +232,8 @@ function AddBar(bar){
 
 		buildOracleHTML().then(html => {
 			$("#oracle-content").html(html);
+		}).catch(err => {
+			console.error("Oracle content load failed:", err);
 		});
 
 		$("#result1").show();
