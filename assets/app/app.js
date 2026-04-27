@@ -52,7 +52,7 @@ const swiper = new Swiper('.swiper', {
 /**
  * Yi-King Tirage variables
  */
-let yiking = ""; // string for wengu ex 679866
+let yiking = ""; // cast result string, e.g. 679866
 let hexagram1, hexagram2;
 
 /**
