@@ -167,6 +167,15 @@ h1 {
 	overflow-y: auto;
 }
 
+#info a {
+  color: sandybrown;
+  text-decoration: none;
+}
+
+#info a:hover {
+  text-decoration: underline;
+}
+
 .consigne {
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	line-height: 1.2em;
