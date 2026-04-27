@@ -372,6 +372,10 @@ body.hasHover .coin:hover {
 	scrollbar-color: #c6c2be transparent;
 }
 
+#oracle-content h1 {
+  font-family: system-ui, -apple-system, Arial, sans-serif;
+}
+
 #info::-webkit-scrollbar,
 #oracle-content::-webkit-scrollbar {
 	width: 5px;
