@@ -120,6 +120,7 @@ async function buildOracleHTML() {
 		}
 
 		// h1 and h2 from hexagram 2
+		html += '<hr>';
 		const sections2 = await fetchSections(hexagram2);
 		for (const s of sections2.filter(s => s.level === 1 || s.level === 2)) {
 			html += marked.parse(s.markdown);

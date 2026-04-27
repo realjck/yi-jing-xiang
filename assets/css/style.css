@@ -361,7 +361,7 @@ body.hasHover .coin:hover {
 	height: 100%;
 	overflow-y: auto;
 	box-sizing: border-box;
-	padding: 2em 20vw 5em 20vw;
+	padding: 5em 20vw 10em 20vw;
 	text-align: left;
 	font-family: system-ui, -apple-system, Arial, sans-serif;
 	font-size: 0.95em;
@@ -369,6 +369,21 @@ body.hasHover .coin:hover {
 	letter-spacing: 0.01em;
 	user-select: text;
 	-webkit-user-select: text;
+	scrollbar-width: thin;
+	scrollbar-color: #c6c2be transparent;
+}
+
+#oracle-content::-webkit-scrollbar {
+	width: 5px;
+}
+
+#oracle-content::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+#oracle-content::-webkit-scrollbar-thumb {
+	background-color: #c6c2be;
+	border-radius: 3px;
 }
 
 #oracle-content h1 {
@@ -397,13 +412,23 @@ body.hasHover .coin:hover {
 	border-left: 2px solid #c6c2be;
 	margin: 0.5em 0;
 	padding-left: 1em;
-	color: #555;
+	color: #333;
 	font-style: italic;
 }
 
 #oracle-content ul {
 	margin: 0.3em 0;
 	padding-left: 1.5em;
+}
+
+#oracle-content li {
+  font-weight: 500;
+}
+
+#oracle-content hr {
+  margin: 3em 0;
+  border-bottom: 2px solid #c6c2be;
+  border-top: 0;
 }
 
 #oracle-content p {
