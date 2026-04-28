@@ -26,9 +26,3 @@ npm install
 # Build Service Worker sw.js
 npm run pwa
 ```
-
-### Libraries:
-
-* [jQuery](https://jquery.com/)
-* [Swiper.js](https://github.com/nolimits4web/swiper)
-* [marked](https://github.com/markedjs/marked)
