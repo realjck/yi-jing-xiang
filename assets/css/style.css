@@ -456,6 +456,7 @@ body {
 
 .hex-line-slot {
   width: 100%;
+  max-width: 300px;
   height: 20px;
   display: flex;
   align-items: center;
