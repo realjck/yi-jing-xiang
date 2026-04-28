@@ -424,8 +424,15 @@ function closeInfo() {
   document.getElementById('modal-info').classList.remove('open');
 }
 
+// ── Viewport height fix for PWA ──
+function updateAppHeight() {
+  document.documentElement.style.setProperty('--app-h', window.innerHeight + 'px');
+}
+window.addEventListener('resize', updateAppHeight);
+
 // ── Init ──
 function init() {
+  updateAppHeight();
   applyTheme();
   applySound();
 

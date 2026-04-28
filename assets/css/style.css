@@ -76,7 +76,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100dvh;
+  height: var(--app-h, 100dvh);
   font-family: 'Noto Serif', Georgia, serif;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
