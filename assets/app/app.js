@@ -106,12 +106,12 @@ function renderInstCoins() {
 
   const coins = [
     {
-      clusters: [f, f, p],
+      clusters: [f, p, p],
       line: `<div class="bar-full"></div>`,
       label: UI_TEXTS[lang]['coin-yang']
     },
     {
-      clusters: [p, p, f],
+      clusters: [f, f, p],
       line: `<div class="bar-half"></div><div class="bar-gap"></div><div class="bar-half"></div>`,
       label: UI_TEXTS[lang]['coin-yin']
     },
@@ -155,13 +155,13 @@ function renderCoinBtns() {
     },
     {
       type: 'yang',
-      coins: [f, f, p],
+      coins: [f, p, p],
       line: `<div class="mini-bar"></div>`,
       label: UI_TEXTS[lang]['coin-yang']
     },
     {
       type: 'yin',
-      coins: [p, p, f],
+      coins: [f, f, p],
       line: `<div class="mini-bar"></div><div class="mini-gap"></div><div class="mini-bar"></div>`,
       label: UI_TEXTS[lang]['coin-yin']
     },
