@@ -317,14 +317,6 @@ function showResultStep() {
     buildCardOverlay(hex);
     updateResultTitle();
 
-    const lbl = document.getElementById('card-label');
-    if (hasMutation) {
-      lbl.textContent = UI_TEXTS[lang][resultStep === 0 ? 'hex1-label' : 'hex2-label'];
-      lbl.style.display = 'block';
-    } else {
-      lbl.style.display = 'none';
-    }
-
     const prev = document.getElementById('arr-prev');
     const next = document.getElementById('arr-next');
 

@@ -596,6 +596,7 @@ body.light { background: #ddd5c0; }
 
 .result-card-wrap {
   flex: 1;
+  min-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -612,11 +613,15 @@ body.light { background: #ddd5c0; }
   box-shadow: 0 20px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(200,150,60,.2);
   position: relative;
   transition: opacity .25s, transform .25s;
+  display: flex;
+  flex-direction: column;
 }
 
 .result-card-upper,
 .result-card-lower {
   width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
   aspect-ratio: 1000 / 820;
   overflow: hidden;
 }
