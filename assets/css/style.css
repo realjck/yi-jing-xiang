@@ -794,6 +794,7 @@ body {
 
 .modal-sheet {
   width: 100%;
+  max-width: 720px;
   background: var(--bg2);
   border-radius: 24px 24px 0 0;
   border-top: 1px solid #2a2018;
