@@ -68,7 +68,9 @@ body {
   margin: 0;
   background: var(--bg);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100dvh;
   font-family: 'Noto Serif', Georgia, serif;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -78,15 +80,19 @@ body {
 #app {
   width: 100%;
   max-width: 720px;
-  height: 100dvh;
+  flex: 1;
+  min-height: 0;
   position: relative;
   display: flex;
   flex-direction: column;
   background: var(--bg);
+  overflow: hidden;
 }
 
 /* ── Header ── */
 .hdr {
+  width: 100%;
+  max-width: 720px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -96,16 +102,8 @@ body {
   background: var(--bg2);
   position: relative;
   z-index: 20;
-}
-.hdr::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  background: var(--bg2);
-  z-index: -1;
+  box-shadow: 0 0 0 100vmax var(--bg2);
+  clip-path: inset(0 -100vmax);
 }
 
 .hdr-left { display: flex; align-items: center; gap: 6px; }
@@ -780,7 +778,7 @@ body {
    MODAL INFO
 ═══════════════════════════════ */
 .modal-overlay {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background: rgba(12,10,8,.75);
   backdrop-filter: blur(6px);

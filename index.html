@@ -13,30 +13,30 @@
 </head>
 <body>
 
-<div id="app">
+<!-- ── Shared header ── -->
+<header class="hdr">
+  <div class="hdr-left">
+    <button class="hdr-home hidden" id="bt-home" aria-label="Home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H15v-5h-6v5H4a1 1 0 01-1-1V10.5z"/>
+      </svg>
+    </button>
+  </div>
+  <div class="hdr-right">
+    <button class="hdr-btn lang-btn" id="bt-lang-en">EN</button>
+    <button class="hdr-btn lang-btn" id="bt-lang-fr">FR</button>
+    <button class="hdr-btn" id="bt-sound" aria-label="Sound">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        <path d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"/>
+      </svg>
+    </button>
+    <button class="hdr-btn" id="bt-info" aria-label="Info">i</button>
+    <button class="hdr-btn" id="bt-theme" aria-label="Theme">&#9790;</button>
+  </div>
+</header>
 
-  <!-- ── Shared header ── -->
-  <header class="hdr">
-    <div class="hdr-left">
-      <button class="hdr-home hidden" id="bt-home" aria-label="Home">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H15v-5h-6v5H4a1 1 0 01-1-1V10.5z"/>
-        </svg>
-      </button>
-    </div>
-    <div class="hdr-right">
-      <button class="hdr-btn lang-btn" id="bt-lang-en">EN</button>
-      <button class="hdr-btn lang-btn" id="bt-lang-fr">FR</button>
-      <button class="hdr-btn" id="bt-sound" aria-label="Sound">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-          <path d="M15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14"/>
-        </svg>
-      </button>
-      <button class="hdr-btn" id="bt-info" aria-label="Info">i</button>
-      <button class="hdr-btn" id="bt-theme" aria-label="Theme">&#9790;</button>
-    </div>
-  </header>
+<div id="app">
 
   <!-- ── Screens ── -->
   <div id="screens">
