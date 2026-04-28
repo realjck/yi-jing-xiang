@@ -305,35 +305,37 @@ function updateResultTitle() {
 
 function showResultStep() {
   const hex = resultStep === 0 ? hexagram1 : hexagram2;
-
   const card = document.getElementById('result-card');
+
+  // Update content immediately so new images are set before any transition
+  document.getElementById('rc-upper-img').src = 'assets/images/' + hex.substring(3) + '.jpg';
+  document.getElementById('rc-lower-img').src = 'assets/images/' + hex.substring(0, 3) + '.jpg';
+  buildCardOverlay(hex);
+  updateResultTitle();
+
+  const prev = document.getElementById('arr-prev');
+  const next = document.getElementById('arr-next');
+
+  prev.classList.toggle('disabled', resultStep === 0);
+  prev.onclick = resultStep === 0 ? null : () => { resultStep = 0; showResultStep(); };
+
+  if (!hasMutation || resultStep === 1) {
+    next.onclick = () => goTo(4);
+  } else {
+    next.onclick = () => { resultStep = 1; showResultStep(); };
+  }
+
+  card.onclick = next.onclick;
+
+  // Animate card in
+  card.style.transition = 'none';
   card.style.opacity = '0';
   card.style.transform = 'scale(.96)';
-
-  setTimeout(() => {
-    document.getElementById('rc-upper-img').src = 'assets/images/' + hex.substring(3) + '.jpg';
-    document.getElementById('rc-lower-img').src = 'assets/images/' + hex.substring(0, 3) + '.jpg';
-
-    buildCardOverlay(hex);
-    updateResultTitle();
-
-    const prev = document.getElementById('arr-prev');
-    const next = document.getElementById('arr-next');
-
-    prev.classList.toggle('disabled', resultStep === 0);
-    prev.onclick = resultStep === 0 ? null : () => { resultStep = 0; showResultStep(); };
-
-    if (!hasMutation || resultStep === 1) {
-      next.onclick = () => goTo(4);
-    } else {
-      next.onclick = () => { resultStep = 1; showResultStep(); };
-    }
-
-    card.onclick = next.onclick;
-
+  requestAnimationFrame(() => {
+    card.style.transition = '';
     card.style.opacity = '1';
     card.style.transform = 'scale(1)';
-  }, 200);
+  });
 }
 
 function buildCardOverlay(hexBinary) {
