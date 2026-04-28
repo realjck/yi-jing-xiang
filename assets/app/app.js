@@ -292,7 +292,7 @@ function updateCastUI() {
 function updateResultTitle() {
   const hex = resultStep === 0 ? hexagram1 : hexagram2;
   document.getElementById('result-zh').textContent =
-    (HEXAGRAMS_TEXTS[lang][hex] ?? '').split('/')[0].trim();
+    (HEXAGRAMS_TEXTS[lang][hex] ?? '').trim();
 
   let numText = '';
   if (hasMutation) {
