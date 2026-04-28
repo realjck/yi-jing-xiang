@@ -329,6 +329,8 @@ function showResultStep() {
       next.onclick = () => { resultStep = 1; showResultStep(); };
     }
 
+    card.onclick = next.onclick;
+
     card.style.opacity = '1';
     card.style.transform = 'scale(1)';
   }, 200);

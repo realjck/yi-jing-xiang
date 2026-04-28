@@ -698,6 +698,9 @@ body.light { background: #ddd5c0; }
 .nav-arr svg { width: 20px; height: 20px; pointer-events: none; }
 .nav-arr:active { border-color: var(--gold); color: var(--gold); }
 .nav-arr.disabled { opacity: .25; pointer-events: none; }
+#arr-next { border-color: var(--gold); color: var(--gold); }
+
+.result-card { cursor: pointer; }
 
 /* ═══════════════════════════════
    SCREEN 4 — ORACLE
