@@ -429,7 +429,7 @@ function init() {
 
   document.getElementById('bt-home').addEventListener('click', () => { PlaySound('back'); goHome(); });
   document.getElementById('bt-sound').addEventListener('click', toggleSound);
-  document.getElementById('bt-theme').addEventListener('click', toggleTheme);
+  document.getElementById('bt-theme').addEventListener('click', () => { PlaySound('click'); toggleTheme(); });
   document.getElementById('bt-info').addEventListener('click', () => { PlaySound('click'); openInfo(); });
   document.getElementById('bt-lang-en').addEventListener('click', () => { PlaySound('click'); SwitchLang('en'); });
   document.getElementById('bt-lang-fr').addEventListener('click', () => { PlaySound('click'); SwitchLang('fr'); });
