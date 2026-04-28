@@ -264,7 +264,7 @@ body {
 
 .home-chinese {
   font-family: 'Hidetoshy', serif;
-  font-size: clamp(56px, 14vw, 80px);
+  font-size: clamp(36px, 9vw, 54px);
   color: var(--gold-lt);
   line-height: 1;
   text-shadow: 0 0 40px rgba(200,150,60,.4);
@@ -281,8 +281,8 @@ body {
 
 .home-logo {
   margin: 24px 0;
-  width: clamp(100px, 25vw, 130px);
-  height: clamp(100px, 25vw, 130px);
+  width: clamp(140px, 35vw, 190px);
+  height: clamp(140px, 35vw, 190px);
   object-fit: contain;
   opacity: .85;
   filter: drop-shadow(0 0 20px rgba(200,150,60,.2));
