@@ -32,5 +32,3 @@ npm run pwa
 * [jQuery](https://jquery.com/)
 * [Swiper.js](https://github.com/nolimits4web/swiper)
 * [marked](https://github.com/markedjs/marked)
-
-### [License CC0](https://creativecommons.org/publicdomain/zero/1.0/)
