@@ -2,7 +2,7 @@
 
 A static JS-based PWA for I Ching consultations, featuring original trigram artwork and the complete text in both English and French.
 
-![JS ES6 jQuery](https://img.shields.io/badge/-JS%20ES6%20jQuery-0?logo=pwa&labelColor=580fc3&color=efd81d)
+![JavaScript](https://img.shields.io/badge/-JavaScript-0?logo=pwa&labelColor=580fc3&color=efd81d)
 
 ## About:
 
