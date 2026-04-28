@@ -245,6 +245,9 @@ body.light { background: #ddd5c0; }
 #s-home {
   background: radial-gradient(ellipse 70% 55% at 50% 35%, #1e1508 0%, var(--bg) 70%);
 }
+:root.light #s-home {
+  background: radial-gradient(ellipse 70% 55% at 50% 35%, #d8ccb4 0%, var(--bg) 70%);
+}
 
 .home-body {
   flex: 1;
