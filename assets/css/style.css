@@ -73,15 +73,13 @@ html, body { height: 100%; }
 
 body {
   margin: 0;
-  background: #1a1410;
+  background: var(--bg);
   display: flex;
   justify-content: center;
   font-family: 'Noto Serif', Georgia, serif;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
-
-body.light { background: #ddd5c0; }
 
 /* ── App container ── */
 #app {
