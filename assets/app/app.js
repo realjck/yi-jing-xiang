@@ -8,7 +8,7 @@ let yiking = '';
 let hexagram1, hexagram2;
 let resultStep = 0;
 let hasMutation = false;
-let lang  = localStorage.getItem('YiJingXiang_lang')  ?? 'en';
+let lang  = localStorage.getItem('YiJingXiang_lang')  ?? ((navigator.languages?.[0] || navigator.language || '').toLowerCase().startsWith('fr') ? 'fr' : 'en');
 let sound = localStorage.getItem('YiJingXiang_sound') ?? '1';
 let theme = localStorage.getItem('YiJingXiang_theme') ?? 'dark';
 
