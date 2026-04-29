@@ -139,6 +139,7 @@ body {
 
 .hdr-btn { width: 40px; height: 40px; }
 .hdr-home { width: 40px; height: 40px; color: var(--gold); }
+#bt-theme { font-size: 20px; padding-bottom: 0.15em; }
 .hdr-btn svg, .hdr-home svg { width: 18px; height: 18px; pointer-events: none; }
 .hdr-home svg { width: 18px; height: 18px; }
 
@@ -831,7 +832,7 @@ body {
 .modal-body {
   font-size: 19px;
   color: var(--muted);
-  line-height: 1.85;
+  line-height: 1.5;
   font-style: italic;
   overflow-y: auto;
   max-height: 280px;
