@@ -91,7 +91,7 @@ Two languages (en/fr), persisted in `localStorage` as `YiJingXiang_lang`. `Switc
 Self-hosted in `assets/fonts/`:
 - `Hidetoshy/` — display font for Chinese characters and titles
 - `noto-serif/` — body text (400, 400-italic, 600)
-- `noto-sans-sc/` — UI labels and buttons (400)
+- `noto-sans-sc/` — UI labels and buttons (500)
 
 ### PWA / Service Worker
 
