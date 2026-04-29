@@ -61,8 +61,8 @@
 }
 @font-face {
   font-family: 'Noto Sans SC';
-  src: url('../fonts/noto-sans-sc/noto-sans-sc-chinese-simplified-400-normal.woff2') format('woff2');
-  font-weight: 400;
+  src: url('../fonts/noto-sans-sc/noto-sans-sc-chinese-simplified-500-normal.woff2') format('woff2');
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -127,7 +127,7 @@ body {
   transition: border-color .2s, color .2s, background .2s;
   user-select: none;
   font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 12px;
   letter-spacing: .05em;
   flex-shrink: 0;
@@ -193,7 +193,7 @@ body {
   background: transparent;
   color: var(--gold-lt);
   font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: .2em;
   font-size: 13px;
   cursor: pointer;
@@ -210,7 +210,7 @@ body {
   background: var(--bg2);
   color: var(--text);
   font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 12px;
   letter-spacing: .15em;
   text-transform: uppercase;
@@ -229,7 +229,7 @@ body {
   letter-spacing: .2em;
   text-transform: uppercase;
   font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   cursor: pointer;
   padding: 10px 24px;
   transition: border-color .2s, color .2s;
@@ -294,7 +294,7 @@ body {
   letter-spacing: .18em;
   text-transform: uppercase;
   font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   text-align: center;
   line-height: 1.6;
 }
@@ -332,7 +332,7 @@ body {
 
 .inst-coins-label {
   font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 10px;
   letter-spacing: .25em;
   color: var(--muted);
@@ -377,7 +377,7 @@ body {
   justify-content: center;
   font-size: 8px;
   font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   flex-shrink: 0;
 }
 .cc-face { background: var(--gold); color: var(--bg); }
@@ -406,7 +406,7 @@ body {
 
 .coin-label {
   font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 10px;
   letter-spacing: .1em;
   color: var(--muted);
@@ -436,7 +436,7 @@ body {
 
 .cast-progress-label {
   font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 11px;
   letter-spacing: .22em;
   color: var(--muted);
@@ -525,7 +525,7 @@ body {
   display: flex; align-items: center; justify-content: center;
   font-size: 7px;
   font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   flex-shrink: 0;
 }
 .mc-face { background: var(--gold); color: var(--bg); }
@@ -553,7 +553,7 @@ body {
 
 .coin-btn-label {
   font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 9px;
   letter-spacing: .08em;
   color: var(--muted);
@@ -582,7 +582,7 @@ body {
 
 .result-num {
   font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 11px;
   letter-spacing: .3em;
   color: var(--muted);
@@ -670,7 +670,7 @@ body {
   bottom: 0; left: 0; right: 0;
   text-align: center;
   font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 9px;
   letter-spacing: .15em;
   color: rgba(255,255,255,.7);
@@ -842,7 +842,7 @@ body {
   background: transparent;
   color: var(--muted);
   font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 11px;
   letter-spacing: .18em;
   text-transform: uppercase;
