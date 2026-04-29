@@ -777,7 +777,7 @@ body {
   color: var(--text);
   opacity: .85;
   margin-bottom: 0.4em;
-  line-height: 1.7;
+  line-height: 1.5;
   font-weight: 600;
 }
 #oracle-content hr { margin: 2em 0; border: none; border-bottom: 1px solid #3a2e22; }
