@@ -45,8 +45,11 @@ header.hdr         Shared header (outside #app)
       ├── #s-cast    (2) Casting
       ├── #s-result  (3) Hexagram result image
       └── #s-oracle  (4) Oracle text
-#modal-info        Info modal (position: fixed overlay)
+#modal-info        Info modal (slides up from bottom)
+#modal-settings    Settings modal (centered, scale animation) — language & sound controls
 ```
+
+The header uses `padding: calc(env(safe-area-inset-top, 0px) + 12px)` so it adapts to the device status bar in PWA fullscreen mode without adding unnecessary space in a regular browser. Requires `viewport-fit=cover` in the meta viewport (already set).
 
 Navigation via `goTo(idx)`. Home button resets casting and returns to screen 0.
 
@@ -78,7 +81,7 @@ Coin tosses accumulate via `AddBar(type)`. After 6 tosses, the 6-character state
 
 ### Localization
 
-Two languages (en/fr), persisted in `localStorage` as `YiJingXiang_lang`. `SwitchLang()` re-renders all UI text including coin labels (`coin-face`/`coin-pile`) and reloads oracle content if a casting is active.
+Two languages (en/fr), persisted in `localStorage` as `YiJingXiang_lang`. `SwitchLang()` re-renders all UI text including coin labels (`coin-face`/`coin-pile`), syncs the active state of the language buttons in `#modal-settings`, and reloads oracle content if a casting is active. Language is switched from the settings modal (gear button in header), not from the navbar directly.
 
 ### Data
 
