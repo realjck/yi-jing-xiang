@@ -27,7 +27,7 @@
   "description": "This app is designed to accompany your physical tosses: use your own coins to perform the ritual, then enter the results to unlock the corresponding I Ching texts.",
   "theme_color": "#202020",
   "background_color": "#202020",
-  "display": "fullscreen",
+  "display": "standalone",
   "dir": "ltr",
   "lang": "en",
   "orientation": "portrait",
