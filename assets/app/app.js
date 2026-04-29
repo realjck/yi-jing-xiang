@@ -48,7 +48,8 @@ function toggleTheme() {
 
 // ── Sound ──
 function applySound() {
-  document.getElementById('bt-sound').classList.toggle('active', sound === '1');
+  document.getElementById('settings-sound-on').classList.toggle('active', sound === '1');
+  document.getElementById('settings-sound-off').classList.toggle('active', sound === '0');
 }
 
 function toggleSound() {
@@ -69,8 +70,8 @@ function SwitchLang(_lang) {
   lang = _lang;
   localStorage.setItem('YiJingXiang_lang', lang);
 
-  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('bt-lang-' + lang).classList.add('active');
+  document.querySelectorAll('.settings-lang-opt').forEach(b => b.classList.remove('active'));
+  document.getElementById('settings-lang-' + lang).classList.add('active');
 
   document.getElementById('baseline').innerHTML       = UI_TEXTS[lang]['baseline'];
   document.getElementById('bt-start').textContent     = UI_TEXTS[lang]['bt-start'];
@@ -86,6 +87,14 @@ function SwitchLang(_lang) {
   document.getElementById('modal-title').textContent  = UI_TEXTS[lang]['modal-title'];
   document.getElementById('modal-body').innerHTML     = UI_TEXTS[lang]['info'];
   document.getElementById('bt-modal-close').textContent = UI_TEXTS[lang]['bt-close'];
+  document.getElementById('modal-settings-title').textContent  = UI_TEXTS[lang]['modal-settings-title'];
+  document.getElementById('settings-lang-label').textContent   = UI_TEXTS[lang]['settings-lang-label'];
+  document.getElementById('settings-lang-fr').textContent      = UI_TEXTS[lang]['settings-lang-fr'];
+  document.getElementById('settings-lang-en').textContent      = UI_TEXTS[lang]['settings-lang-en'];
+  document.getElementById('settings-sound-label').textContent  = UI_TEXTS[lang]['settings-sound-label'];
+  document.getElementById('settings-sound-on').textContent     = UI_TEXTS[lang]['settings-sound-on'];
+  document.getElementById('settings-sound-off').textContent    = UI_TEXTS[lang]['settings-sound-off'];
+  document.getElementById('bt-settings-close').textContent     = UI_TEXTS[lang]['bt-close'];
 
   renderInstCoins();
   renderCoinBtns();
@@ -317,12 +326,12 @@ function showResultStep() {
   const next = document.getElementById('arr-next');
 
   prev.classList.toggle('disabled', resultStep === 0);
-  prev.onclick = resultStep === 0 ? null : () => { resultStep = 0; showResultStep(); };
+  prev.onclick = resultStep === 0 ? null : () => { PlaySound('click'); resultStep = 0; showResultStep(); };
 
   if (!hasMutation || resultStep === 1) {
-    next.onclick = () => goTo(4);
+    next.onclick = () => { PlaySound('click'); goTo(4); };
   } else {
-    next.onclick = () => { resultStep = 1; showResultStep(); };
+    next.onclick = () => { PlaySound('click'); resultStep = 1; showResultStep(); };
   }
 
   card.onclick = next.onclick;
@@ -416,12 +425,20 @@ async function buildOracleHTML() {
   return html;
 }
 
-// ── Modal ──
+// ── Modal info ──
 function openInfo() {
   document.getElementById('modal-info').classList.add('open');
 }
 function closeInfo() {
   document.getElementById('modal-info').classList.remove('open');
+}
+
+// ── Modal settings ──
+function openSettings() {
+  document.getElementById('modal-settings').classList.add('open');
+}
+function closeSettings() {
+  document.getElementById('modal-settings').classList.remove('open');
 }
 
 // ── Viewport height fix for PWA ──
@@ -437,11 +454,18 @@ function init() {
   applySound();
 
   document.getElementById('bt-home').addEventListener('click', () => { PlaySound('back'); goHome(); });
-  document.getElementById('bt-sound').addEventListener('click', toggleSound);
+  document.getElementById('bt-settings').addEventListener('click', () => { PlaySound('click'); openSettings(); });
   document.getElementById('bt-theme').addEventListener('click', () => { PlaySound('click'); toggleTheme(); });
   document.getElementById('bt-info').addEventListener('click', () => { PlaySound('click'); openInfo(); });
-  document.getElementById('bt-lang-en').addEventListener('click', () => { PlaySound('click'); SwitchLang('en'); });
-  document.getElementById('bt-lang-fr').addEventListener('click', () => { PlaySound('click'); SwitchLang('fr'); });
+
+  document.getElementById('settings-lang-en').addEventListener('click', () => { PlaySound('click'); SwitchLang('en'); });
+  document.getElementById('settings-lang-fr').addEventListener('click', () => { PlaySound('click'); SwitchLang('fr'); });
+  document.getElementById('settings-sound-on').addEventListener('click', () => { if (sound !== '1') { PlaySound('click'); toggleSound(); } });
+  document.getElementById('settings-sound-off').addEventListener('click', () => { if (sound !== '0') { toggleSound(); } });
+  document.getElementById('bt-settings-close').addEventListener('click', () => { PlaySound('click'); closeSettings(); });
+  document.getElementById('modal-settings').addEventListener('click', e => {
+    if (e.target === document.getElementById('modal-settings')) closeSettings();
+  });
 
   document.getElementById('bt-start').addEventListener('click', () => { PlaySound('click'); goTo(1); });
   document.getElementById('bt-inst-back').addEventListener('click', () => { PlaySound('click'); goTo(0); });
