@@ -29,6 +29,10 @@
   --gold:    #a07020;
   --gold-lt: #c8900a;
 }
+:root.light .btn-action,
+:root.light .btn-action.primary { background: transparent; }
+:root.light .btn-action.primary:active { background: var(--gold); }
+:root.light .nav-arr { background: transparent; }
 
 /* ── Fonts ── */
 @font-face {
@@ -116,7 +120,7 @@ body {
 .hdr-right { display: flex; align-items: center; gap: 10px; flex-wrap: nowrap; }
 
 .hdr-btn, .hdr-home {
-  border: 1px solid #3a2e22;
+  border: 1.5px solid var(--muted);
   background: var(--bg2);
   color: var(--muted);
   cursor: pointer;
@@ -219,6 +223,7 @@ body {
 }
 .btn-action.primary { border-color: var(--gold); color: var(--gold-lt); background: var(--bg3); }
 .btn-action:active { border-color: var(--gold); color: var(--gold-lt); }
+.btn-action.primary:active { background: var(--gold); color: var(--bg); }
 
 .btn-reset {
   background: none;
@@ -702,6 +707,7 @@ body {
 }
 .nav-arr svg { width: 20px; height: 20px; pointer-events: none; }
 .nav-arr:active { border-color: var(--gold); color: var(--gold); }
+#arr-next:active { background: var(--gold); color: var(--bg); }
 .nav-arr.disabled { opacity: .25; pointer-events: none; }
 #arr-next { border-color: var(--gold); color: var(--gold); }
 
