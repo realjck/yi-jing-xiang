@@ -1,6 +1,6 @@
 {
   "short_name": "Yi Jing",
-  "name": "Yi Jing - Book of Changes companion app (EN/FR)",
+  "name": "Yijing - Book of Changes companion app",
   "icons": [
     {
       "src": "./assets/images/favicon.svg",
@@ -25,8 +25,8 @@
   "start_url": "https://yijing.pxly.fr",
   "scope": "https://yijing.pxly.fr",
   "description": "This app is designed to accompany your physical tosses: use your own coins to perform the ritual, then enter the results to unlock the corresponding I Ching texts.",
-  "theme_color": "#202020",
-  "background_color": "#202020",
+  "theme_color": "#000000",
+  "background_color": "#000000",
   "display": "standalone",
   "dir": "ltr",
   "lang": "en",
