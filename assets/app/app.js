@@ -346,11 +346,11 @@ function buildCardOverlay(hexBinary) {
     const row = document.createElement('div');
     row.className = 'card-hex-line';
     if (isYang) {
-      row.innerHTML = `<div style="flex:1;height:10px;background:rgba(255,255,255,.75);border-radius:5px;"></div>`;
+      row.innerHTML = `<div style="flex:1;height:10px;background:rgba(255,255,255,.5);border-radius:5px;"></div>`;
     } else {
-      row.innerHTML = `<div style="flex:1;height:10px;background:rgba(255,255,255,.75);border-radius:5px;"></div>
+      row.innerHTML = `<div style="flex:1;height:10px;background:rgba(255,255,255,.5);border-radius:5px;"></div>
                        <div style="width:12px;"></div>
-                       <div style="flex:1;height:10px;background:rgba(255,255,255,.75);border-radius:5px;"></div>`;
+                       <div style="flex:1;height:10px;background:rgba(255,255,255,.5);border-radius:5px;"></div>`;
     }
     overlay.appendChild(row);
   }
