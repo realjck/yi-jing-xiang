@@ -36,8 +36,5 @@
     "education",
     "entertainment",
     "lifestyle"
-  ],
-  "display_override": [
-    "window-controls-overlay"
   ]
 }
