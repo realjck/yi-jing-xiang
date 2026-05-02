@@ -1,6 +1,6 @@
 {
-  "short_name": "Yi Jing",
-  "name": "Yijing - Book of Changes companion app",
+  "short_name": "Yijing",
+  "name": "Yijing Book of Changes",
   "icons": [
     {
       "src": "./assets/images/favicon.svg",
